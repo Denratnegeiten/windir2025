@@ -1,0 +1,676 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+}
+
+body { 
+    font-family: sans-serif; 
+    font-weight: 400; 
+    color: #fff; 
+    font-size: 15px; 
+}
+
+a { 
+    text-decoration: none; 
+}
+
+img { 
+    max-width: 100%; 
+}
+
+.wrapper { 
+    background: #212121; 
+    background: linear-gradient(0deg,rgba(33, 33, 33, 1) 0%, rgba(0, 0, 0, 1) 76%, rgba(0, 0, 0, 1) 100%); 
+    width: 100%; 
+}
+
+.container { 
+    max-width: 1900px; 
+    width: 90%; 
+    margin: 0 auto; 
+}
+
+/* ШАПКА И НАВИГАЦИЯ */
+
+header { 
+    padding: 50px 0; 
+}
+
+header .logo, 
+footer .blocks .logo{
+    text-transform: uppercase; 
+    font-size: 30px; 
+    font-weight: 800; 
+}
+
+header nav { 
+    float: right; 
+    width: 48%; 
+}
+
+header nav ul { 
+    list-style: none; 
+    display: flex; 
+    justify-content: space-between; 
+    z-index: 2; 
+    position: relative; 
+}
+
+header nav ul li { 
+    display: inline-block; 
+}
+
+header nav ul li a { 
+    color: #fff; 
+}
+
+header nav ul li.active::after { 
+    content: ''; 
+    display: block; 
+    width: 100%; 
+    height: 5px; 
+    background: #4d0205; 
+    border-radius: 10px; 
+    position: relative; 
+    top: 15px; 
+    left: 0px;
+}
+
+header nav ul li:not(.active):not(.btn) a:hover { 
+    border-bottom: 5px solid #8f0007; 
+}
+
+header nav ul li.btn a, .email .block button { 
+    background: #8f0007; 
+    padding: 10px 18px; 
+    border-radius: 2px; 
+    transition: all 500ms ease; 
+}
+
+header nav ul li.btn a:hover, 
+.email .block button:hover {
+    background: #4d0205; 
+}
+
+/* ГЛАВНАЯ СТРАНИЦА (INDEX.HTML) */
+
+.hero { 
+    padding-bottom: 100px; 
+    position: relative; 
+    z-index: 1; 
+}
+
+.hero--info { 
+    width: 40%; 
+    padding-top: 70px; 
+}
+
+.hero--info h2 { 
+     font-size: 25px; 
+     font-weight: 600px; 
+     color: #4d0004; 
+}
+
+.hero--info h1 { 
+    font-size: 40px; 
+    font-weight: 600px; 
+}
+
+.hero--info p { 
+    font-weight: 500px; 
+    line-height: 110%; 
+    margin: 30px 0; 
+}
+
+.hero--info a.btn {
+    background: #8f0007;
+    color: #fff;
+    border-radius: 5px;
+    padding: 15px 20px;
+    border: 0;
+    transition: all 500ms ease;
+    font-size: 15px;
+    display: inline-block;
+}
+
+.hero--info a.btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.hero img {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    width: 820px;
+}
+
+/* ЧЕТЫРЕ СТОЛПА */
+
+.trending {
+    padding-top: 60px;
+}
+
+.trending h3 {
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.trending .disc {
+    color: #fff;
+    background: #4d0206;
+    border-radius: 5px;
+    padding: 8px 23px;
+    float: right;
+    display: block;
+    transition: all 500ms ease;
+}
+
+.trending .disc:hover {
+    transform: scale(1.1);
+}
+
+.trending .alb {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.trending .alb span {
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.trending .alb .block {
+    flex-shrink: 0;
+    width: 20%;
+}
+
+.trending .alb .block a.album-title-link {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+}
+
+.trending .alb .block a.album-title-link img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.trending .alb .block a.album-title-link:hover img {
+    transform: scale(1.05);
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.trending .alb .block span a.album-title-link:hover { 
+    color: #8f0007;
+    cursor: pointer;
+}
+
+.big-text { 
+    padding-top: 200px; 
+    padding-bottom: 40px;
+    font-size: 40px; 
+    font-weight: 600; 
+    text-align: center; 
+}
+
+/* БАННЕР */
+
+.banner {
+    padding: 2px 0;
+}
+
+.banner h3 {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.banner p {
+    line-height: 170%;
+    margin-bottom: 30px;
+    width: 1100px;
+}
+
+.banner img {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* ПОДЛИННЫЕ ХРОНИКИ */
+
+.features {
+    background: url('/img/wall.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 80px 0;
+}
+
+.features h3,
+.features p {
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features h3 {
+    font-size: 30px;
+}
+
+.features .info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.features .info .block {
+    text-align: center;
+    width: 17%;
+    margin: 30px 2%;
+}
+
+.features .info .block img {
+    margin-bottom: 2px;
+}
+
+.features .info .block a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.features .info .block a:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.features .info .block a:hover img {
+    opacity: 0.8;
+}
+
+.features .info .block p {
+    margin-top: 10px;
+}
+
+/* ВИДЕО */
+
+.projects {
+    padding: 80px 0;
+}
+
+.projects h3 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.projects p {
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* "EMAIL" (ПОДПИСКА) */
+
+.email {
+    padding-bottom: 120px;
+}
+
+.email h3 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.email .block {
+    background: #000;
+    margin-top: 30px;
+    border-radius: 5px;
+    padding: 25px 2%;
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.email .block h4 {
+    font-weight: 500;
+}
+
+.email .block p {
+    width: 500px;
+}
+
+.email .block input {
+    background: #fff;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    width: 600px;
+    font-family: sans-serif;
+    font-weight: 400;
+    padding: 20px 30px;
+    position: relative;
+    right: -110px;
+    z-index: 1;
+    padding-right: 120px;
+}
+
+.email .block button {
+    cursor: pointer;
+    border: 0;
+    padding: 15px 17px;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+/* СТРАНИЦА "БИОГРАФИЯ" (BIOGRAPHY.HTML) */
+
+.biog {
+    position: relative;
+}
+
+.biog .info {
+    width: 50%;
+    padding: 50px 0;
+}
+
+.biog .info h1 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.biog img {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 48%;
+}
+
+.biog .info p a.text-link {
+    color: #a0a0a0;
+}
+
+/* УЧАСТНИКИ */
+
+.part {
+    padding: 180px 0;
+}
+
+.part h2 {
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+.part .blocks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.part .blocks .block {
+    width: 19%;
+    border-radius: 5px;
+    padding: 30px 40px;
+    background: #111111;
+}
+
+.part .blocks .block h3 {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.part .blocks .block .badge {
+    border-radius: 2px;
+    padding: 10px 20px;
+    background: #4d0205;
+}
+
+/* ПОДВАЛ */
+
+footer {
+    background: #000;
+    padding: 20px 0;
+}
+
+footer .blocks {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .blocks p {
+    width: 300px;
+    margin: 15px 0;
+}
+
+footer .blocks h4 {
+    font-weight: 500;
+}
+
+footer .blocks ul {
+    list-style: none;
+}
+
+footer .blocks ul li {
+    margin-top: 7px;
+    opacity: 0.8;
+}
+
+footer hr {
+    margin: 30px 0;
+    border: 0;
+    height: 1px;
+    background: #3b3b3b;
+}
+
+footer>p {
+    text-align: center;
+}
+
+footer a {
+    color: #a0a0a0;
+}
+
+/* СТРАНИЦА "ДИСКОГРАФИЯ" (DISCOGRAPHY.HTML) */
+
+.discography-main {
+    padding: 80px 0 100px 0;
+}
+
+.discography-header {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.discography-header h1 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.discography-header p {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-top: 10px;
+}
+
+.album-block {
+    display: flex;
+    align-items: flex-start;
+    background: #0d0d0d;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    padding: 20px;
+    transition: background 0.3s ease;
+}
+
+.album-block:hover {
+    background: #151515;
+}
+
+.album-block img {
+    width: 180px;
+    height: 180px;
+    border-radius: 5px;
+    margin-right: 40px;
+    flex-shrink: 0;
+}
+
+.album-info h2 {
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.album-info .year-badge {
+    display: inline-block;
+    background: #8f0007;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.album-info .description {
+    line-height: 160%;
+    margin-bottom: 25px;
+    width: 70%;
+}
+
+.album-info .details span {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 15px;
+    opacity: 0.7;
+}
+
+.album-block.compilation {
+    opacity: 0.8;
+}
+
+.album-info h2 a.album-link {
+    color: #4d0004;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.album-info h2 a.album-link:hover {
+    color: #8f0007;
+    cursor: pointer;
+}
+
+.trending .alb .block span a.album-title-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.trending .alb .block span a.album-title-link:hover {
+    color: #8f0007;
+    cursor: pointer;
+}
+
+/* СТРАНИЦА "ГАЛЕРЕЯ" (GALLERY.HTML) */
+
+.gallery-main {
+    padding: 80px 0 100px 0;
+}
+
+.gallery-header {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.gallery-header h1 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.gallery-header p {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-top: 10px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 0 50px 0;
+}
+
+.image-grid a {
+    display: block;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.image-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.image-grid img:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+/* МОДАЛЬНОЕ ОКНО */
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.lightbox .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    line-height: 1;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.lightbox .close-btn:hover {
+    opacity: 1;
+    color: #8f0007;
+}

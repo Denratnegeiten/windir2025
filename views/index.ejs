@@ -197,50 +197,7 @@
                 <p>Копирайт,© 2025 Windir Legacy. Все права защищены.</p>
         </footer>
     </div>
-    <script>
-        function submitSubscription() {
-                const API_ENDPOINT = 'https://windir-backend.onrender.com/subscribe'; 
-                
-                const emailInput = document.getElementById('emailField');
-                const email = emailInput.value;
-                const statusMessage = document.getElementById('statusMessage');
 
-            if (!email || !email.includes('@') || !email.includes('.')) {
-                statusMessage.textContent = 'Пожалуйста, введите корректный адрес электронной почты.';
-                statusMessage.style.color = '#8f0007';
-                return;
-            }
-            
-            statusMessage.textContent = 'Отправка...';
-            statusMessage.style.color = '#fff'; 
-
-            fetch(API_ENDPOINT, { 
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email: email }),
-            })
-            .then(response => {
-                if (!response.ok) {
-                    return response.json().then(errorData => {
-                        throw new Error(errorData.message || 'Ошибка сервера.');
-                    });
-                }
-                return response.json();
-            })
-            .then(data => {
-                statusMessage.textContent = data.message || 'Вы успешно подписались!';
-                statusMessage.style.color = 'green';
-                emailInput.value = '';
-            })
-            .catch(error => {
-                console.error('Ошибка:', error);
-                statusMessage.textContent = error.message || 'Произошла неизвестная ошибка при подписке.';
-                statusMessage.style.color = '#8f0007';
-            });
-        }
-    </script>
 
 </body>
 

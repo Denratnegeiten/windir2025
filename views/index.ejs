@@ -154,10 +154,12 @@
                         <h4>Оставайтесь в Хрониках</h4>
                         <p>Получайте уведомления о новых релизах Vreid и Cor Scorpii, а также о наследии Sognametal.</p>
                     </div>
-                    <div class="input-group"> 
-                        <input type="email" id="emailField" name="email" placeholder="Enter email address" required>
-                        <button type="button" onclick="submitSubscription()">Continue</button>
-                    </div>
+                    <form action="/subscribe" method="POST">
+                        <div class="input-group"> 
+                            <input type="email" name="user_email" placeholder="Enter email address" required>
+                            <button type="submit">Continue</button>
+                        </div>
+                    </form>
                 </div>
                 <p id="statusMessage" style="color: #fff; margin-top: 10px; text-align: center;"></p>
             </div>

@@ -10,4 +10,12 @@ res.render('index', {
   });
 });
 
+/* Обработка формы подписки */
+router.post('/subscribe', function(req, res) {
+  const email = req.body.user_email;
+  console.log("Получен email для подписки:", email);
+  
+  res.send("Спасибо за подписку! Мы будем присылать новости на " + email);
+});
+
 module.exports = router;

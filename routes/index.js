@@ -6,6 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('index', {
     title: 'Windir Legacy',
     subtitle: 'Наследие Согнаметала',
+    counter: req.session.counter,
     albums: ['Likferd', '1184', 'Arntor', 'Sóknardalr']
   });
 });

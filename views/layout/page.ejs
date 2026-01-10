@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="container">
+            <span class="logo">Windir Legacy</span>
+            <nav>
+                <ul>
+                    <li class="<%= (title === 'Windir Legacy' || title === 'Главная') ? 'active' : '' %>">
+                        <a href="/">Главная</a>
+                    </li>
+
+                    <li class="<%= (typeof title !== 'undefined' && title.includes('Биография')) ? 'active' : '' %>">
+                        <a href="/biography">Биография</a>
+                    </li>
+
+                    <li class="<%= (typeof title !== 'undefined' && title.includes('Дискография')) ? 'active' : '' %>">
+                        <a href="/discography">Дискография</a>
+                    </li>
+
+                    <li class="<%= (typeof title !== 'undefined' && (title.includes('Галерея') || title.includes('Галлерея'))) ? 'active' : '' %>">
+                        <a href="/gallery">Галерея</a>
+                    </li>
+
+                    <li class="btn"><a href="https://www.metal-archives.com/bands/Windir/360">Архив</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <%- body %>
+
+        <footer>
+            <div class="container">
+                <div style="margin-bottom: 20px; font-size: 0.9em; text-align: center;">
+                    <span style="color: #8f0007; font-weight: bold;">Состав:</span>
+                    <% if(typeof nav !== 'undefined' && nav.length > 0) { 
+                        nav.forEach(function(member, index) { %>
+                            <a href="/members/<%= member.nick %>" style="color: #ccc; text-decoration: none; margin-left: 10px;">
+                                <%= member.title %>
+                            </a>
+                            <% if(index < nav.length - 1) { %> | <% } %>
+                        <% }); 
+                    } else { %>
+                        <span style="color: #666; margin-left: 10px;">Данные загружаются...</span>
+                    <% } %>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

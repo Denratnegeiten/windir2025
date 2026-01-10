@@ -15,8 +15,13 @@ mongoose.connect('mongodb://127.0.0.1:27017/windirMongoose2025');
 
 var app = express();
 
+var expressLayouts = require('express-ejs-layouts');
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(expressLayouts);
+app.set('layout', 'layout/page');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -37,6 +42,8 @@ app.use(function(req, res, next) {
   req.session.counter = (req.session.counter || 0) + 1;
   next();
 });
+
+app.use(require("./middlewares/createMenu.js"));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

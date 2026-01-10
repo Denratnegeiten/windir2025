@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %> | Windir Legacy</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        /* Принудительно задаем темную тему для этой страницы */
+        body {
+            background-color: #0b0b0b; /* Очень темный серый */
+            color: #e0e0e0;           /* Светло-серый текст */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .member-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background: #151515;      /* Чуть светлее фона */
+            border: 1px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        h1 {
+            color: #8f0007;          /* Золотистый/металлический цвет для заголовка */
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+        }
+        .member-pic {
+            max-width: 100%;
+            height: auto;
+            border: 3px solid #4d0004;
+            margin: 20px 0;
+            filter: grayscale(30%);  /* Придаем атмосферности */
+        }
+        .description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: justify;
+            margin-top: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #8f0007;
+            text-decoration: none;
+            border: 1px solid #4d0004;
+            padding: 10px 20px;
+            transition: 0.3s;
+        }
+        .back-link:hover {
+            background: #4d0004;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="member-container">
+        <h1><%= title %></h1>
+        
+        <% if (picture) { %>
+            <img src="<%= picture %>" alt="<%= title %>" class="member-pic">
+        <% } %>
+        
+        <div class="description">
+            <%= desc %>
+        </div>
+
+        <a href="/biography" class="back-link">← Вернуться в галерею</a>
+    </div>
+</body>
+</html>

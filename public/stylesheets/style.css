@@ -431,6 +431,57 @@ header nav ul li.btn a:hover,
     background: #4d0205;
 }
 
+.block-link {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block;
+}
+
+.block-link .block {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.block-link:hover .block {
+    transform: translateY(-5px);
+    border-color: #4d0004;
+}
+
+.block-link:active, .block-link:visited {
+    color: inherit !important;
+}
+
+.part .blocks a.block-link {
+    text-decoration: none !important;
+    color: #fff !important;
+    display: block;
+    width: 19%;
+}
+
+.part .blocks a.block-link .block {
+    width: 100% !important; 
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.part .blocks a.block-link h3,
+.part .blocks a.block-link p,
+.part .blocks a.block-link span {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+.part .blocks a.block-link:hover .block {
+    transform: translateY(-10px);
+    border: 1px solid #4d0004;
+    box-shadow: 0 5px 15px #4d0004;
+}
+
+.part .blocks a.block-link:visited,
+.part .blocks a.block-link:active {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
 /* ПОДВАЛ */
 
 footer {

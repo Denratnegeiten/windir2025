@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Успешно</title>
+    <title>Подписка оформлена | Windir Legacy</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        body {
+            background-color: #0b0b0b; /* Тёмный фон */
+            color: #e0e0e0;           /* Светлый текст */
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .message-box {
+            background: #151515;
+            padding: 40px;
+            border: 1px solid #4d0004; /* Золотистая рамка */
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(0,0,0,0.7);
+            max-width: 500px;
+        }
+        h1 {
+            color: #8f0007;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .btn-home {
+            display: inline-block;
+            color: #8f0007;
+            text-decoration: none;
+            border: 1px solid #4d0004;
+            padding: 10px 20px;
+            transition: 0.3s;
+        }
+        .btn-home:hover {
+            background: #4d0004;
+            color: #000;
+        }
+    </style>
 </head>
 <body>
-    <div style="text-align: center; margin-top: 50px;">
+    <div class="message-box">
         <h1>Подписка оформлена!</h1>
-        <p>Наследие Windir теперь в вашем списке рассылки.</p>
-        <a href="/">Вернуться на главную</a>
+        <p>Наследие Windir теперь в вашем списке рассылки. Вы будете получать уведомления об архивных материалах.</p>
+        <a href="/" class="btn-home">Вернуться на главную</a>
     </div>
 </body>
 </html>

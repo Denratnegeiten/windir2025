@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.cookie('greeting', 'Welcome to Sognametal').render('index', {
+  req.session.greeting = "Valfar is watching over the session";
+  res.render('index', {
     title: 'Windir Legacy',
     subtitle: 'Наследие Согнаметала',
     albums: ['Likferd', '1184', 'Arntor', 'Sóknardalr']

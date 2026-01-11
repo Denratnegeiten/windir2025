@@ -1,12 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var WindirMember = require('../models/windir-member').WindirMember;
+var checkAuth = require("../middlewares/checkAuth.js");
 
 router.get('/', function(req, res, next) {
     res.send('Новый маршрутизатор для участников Windir');
 });
 
-router.get("/:nick", async function(req, res, next) {
+router.get("/:nick", checkAuth, async function(req, res, next) {
     try {
         var members = await WindirMember.find({nick: req.params.nick});
         

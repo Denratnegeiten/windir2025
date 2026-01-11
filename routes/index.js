@@ -52,4 +52,12 @@ router.post('/logreg', async function(req, res, next) {
   }
 });
 
+router.post('/logout', function(req, res, next) {
+  req.session.destroy(function(err) {
+    if (err) return next(err);
+    res.locals.user = null;
+    res.redirect('/');
+  });
+});
+
 module.exports = router;

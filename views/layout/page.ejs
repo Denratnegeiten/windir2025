@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title><%= (typeof title !== 'undefined') ? title : 'Windir Legacy' %></title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
@@ -29,6 +29,10 @@
                     </li>
 
                     <li class="btn"><a href="https://www.metal-archives.com/bands/Windir/360">Архив</a></li>
+
+                    <li class="<%= (title === 'Вход') ? 'active' : '' %>">
+                        <a href="/logreg">Войти</a>
+                    </li>
                 </ul>
             </nav>
         </header>

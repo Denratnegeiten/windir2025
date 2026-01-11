@@ -29,4 +29,13 @@ router.get('/logreg', function(req, res, next) {
   res.render('logreg', { title: 'Вход' });
 });
 
+router.post('/logreg', function(req, res, next) {
+  var username = req.body.username;
+  var password = req.body.password;
+  
+  console.log("Логин из формы:", username);
+  console.log("Пароль из формы:", password);
+  
+});
+
 module.exports = router;

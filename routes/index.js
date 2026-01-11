@@ -17,7 +17,9 @@ router.get('/discography', (req, res) => res.render('discography', { title: 'Д�
 router.get('/gallery', (req, res) => res.render('gallery', { title: 'Галлерея Windir' }));
 
 router.get('/success', function(req, res) {
-  res.render('success');
+  res.render('success', { 
+    title: 'Подписка оформлена' 
+  });
 });
 
 router.post('/subscribe', function(req, res) {

@@ -36,26 +36,20 @@ router.post('/logreg', async function(req, res, next) {
   
   console.log("Логин из формы:", username);
   
-  // Ищем пользователя в базе данных
   var users = await User.find({username: username});
 
   if (!users.length) {
-    // Если пользователя нет — создаем нового
     var user = new User({username: username, password: password});
     await user.save();
     
-    // Сохраняем ID в сессию и редиректим на главную
     req.session.user_id = user._id;
     res.redirect('/');
   } else {
-    // Если пользователь найден — проверяем пароль
     var foundUser = users[0];
     if (foundUser.checkPassword(password)) {
-      // Пароль верный — сохраняем ID и на главную
       req.session.user_id = foundUser._id;
       res.redirect('/');
     } else {
-      // Пароль неверный — возвращаем на страницу входа
       res.render('logreg', { title: 'Вход' });
     }
   }
